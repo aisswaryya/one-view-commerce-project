@@ -1,70 +1,125 @@
-# Getting Started with Create React App
+OVC-Interview-Test
+Instructions
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Please write a react typescript (or javascript) redux app to display a table using this api endpoint https://jsonplaceholder.typicode.com/users. The project should also include sufficient unit tests.
 
-## Available Scripts
+Before submitting your assignment, please check to see if it works in https://codesandbox.io/ by importing the github link into a new project/Sandbox. Here’s a link that describes how to do it https://codesandbox.io/docs/importing.
 
-In the project directory, you can run:
+Submit your work as a git repository and send us the link in an email when you've finished
 
-### `npm start`
+Please try to complete all 3 features described.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+We'll evalulate mainly on code readability and code reusability.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+    Tools to use:
+        create-react-app https://github.com/facebook/create-react-app
+        redux - https://redux.js.org/
+        jest - https://jestjs.io/
+        redux-thunk - https://github.com/reduxjs/redux-thunk
 
-### `npm test`
+Feature 1. Develop a table with 4 columns Name, Email, City, and Company populating the rows with the response from the api endpoint https://jsonplaceholder.typicode.com/users.
+- The Name column should use user.name - The Email column should use user.email - The City column should use user.address.city - The Company column should use user.company.name.
+Name 	Email 	City 	Company
+Leanne Graham 	Sincere@april.biz 	Gwenborough 	Romaguera-Crona
+Ervin Howell 	Shanna@melissa.tv 	Wisokyburgh 	Deckow-Crist
+zebra stripes 	Nathan@yesenia.net 	McKenziehaven 	Romaguera-Jacobson
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Feature 2. Add an input field to search based on name. For instance if "Lea" is entered, only the "Leanne Graham" row should show in the table.
+Name 	Email 	City 	Company
+Leanne Graham 	Sincere@april.biz 	Gwenborough 	Romaguera-Crona
 
-### `npm run build`
+Feature 3. Make the rows clickable. When a row is clicked, the website should show the user's posts. You can utilize this api, https://jsonplaceholder.typicode.com/posts?userId=1 for retrieve a user's posts.
+Leanne Graham's Posts:
+Title 	Body
+sunt aut facere repellat provident occaecati excepturi optio reprehenderit 	quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+https://jsonplaceholder.typicode.com/users gives back json looking like the following
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[
+  {
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "address": {
+      "street": "Kulas Light",
+      "suite": "Apt. 556",
+      "city": "Gwenborough",
+      "zipcode": "92998-3874",
+      "geo": {
+        "lat": "-37.3159",
+        "lng": "81.1496"
+      }
+    },
+    "phone": "1-770-736-8031 x56442",
+    "website": "hildegard.org",
+    "company": {
+      "name": "Romaguera-Crona",
+      "catchPhrase": "Multi-layered client-server neural-net",
+      "bs": "harness real-time e-markets"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Ervin Howell",
+    "username": "Antonette",
+    "email": "Shanna@melissa.tv",
+    "address": {
+      "street": "Victor Plains",
+      "suite": "Suite 879",
+      "city": "Wisokyburgh",
+      "zipcode": "90566-7771",
+      "geo": {
+        "lat": "-43.9509",
+        "lng": "-34.4618"
+      }
+    },
+    "phone": "010-692-6593 x09125",
+    "website": "anastasia.net",
+    "company": {
+      "name": "Deckow-Crist",
+      "catchPhrase": "Proactive didactic contingency",
+      "bs": "synergize scalable supply-chains"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Clementine Bauch",
+    "username": "Samantha",
+    "email": "Nathan@yesenia.net",
+    "address": {
+      "street": "Douglas Extension",
+      "suite": "Suite 847",
+      "city": "McKenziehaven",
+      "zipcode": "59590-4157",
+      "geo": {
+        "lat": "-68.6102",
+        "lng": "-47.0653"
+      }
+    },
+    "phone": "1-463-123-4447",
+    "website": "ramiro.info",
+    "company": {
+      "name": "Romaguera-Jacobson",
+      "catchPhrase": "Face to face bifurcated interface",
+      "bs": "e-enable strategic applications"
+    }
+  }
+]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+https://jsonplaceholder.typicode.com/posts?userId=1 responds with the following
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "title": "qui est esse",
+    "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+  }
+]
